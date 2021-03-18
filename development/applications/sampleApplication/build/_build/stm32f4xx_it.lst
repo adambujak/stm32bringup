@@ -1,0 +1,478 @@
+ARM GAS  /var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 1
+   4              		.eabi_attribute 28, 1
+   5              		.fpu fpv4-sp-d16
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.thumb
+  16              		.file	"stm32f4xx_it.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.section	.bss.isOSStarted,"aw",%nobits
+  21              		.align	2
+  24              	isOSStarted:
+  25 0000 00000000 		.space	4
+  26              		.section	.text.OSStarted,"ax",%progbits
+  27              		.align	2
+  28              		.global	OSStarted
+  29              		.thumb
+  30              		.thumb_func
+  32              	OSStarted:
+  33              	.LFB135:
+  34              		.file 1 "../src/stm32f4xx_it.c"
+   1:../src/stm32f4xx_it.c **** #include "stm32f4xx_it.h"
+   2:../src/stm32f4xx_it.c **** #include "stm32f4xx_hal.h"
+   3:../src/stm32f4xx_it.c **** #include "com.h"
+   4:../src/stm32f4xx_it.c **** 
+   5:../src/stm32f4xx_it.c **** static int isOSStarted = 0;
+   6:../src/stm32f4xx_it.c **** 
+   7:../src/stm32f4xx_it.c **** void OSStarted(void)
+   8:../src/stm32f4xx_it.c **** {
+  35              		.loc 1 8 0
+  36              		.cfi_startproc
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 1, uses_anonymous_args = 0
+  39              		@ link register save eliminated.
+  40 0000 80B4     		push	{r7}
+  41              	.LCFI0:
+  42              		.cfi_def_cfa_offset 4
+  43              		.cfi_offset 7, -4
+  44 0002 00AF     		add	r7, sp, #0
+  45              	.LCFI1:
+  46              		.cfi_def_cfa_register 7
+   9:../src/stm32f4xx_it.c ****   isOSStarted = 1;
+  47              		.loc 1 9 0
+  48 0004 034B     		ldr	r3, .L2
+  49 0006 0122     		movs	r2, #1
+  50 0008 1A60     		str	r2, [r3]
+  10:../src/stm32f4xx_it.c **** }
+ARM GAS  /var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s 			page 2
+
+
+  51              		.loc 1 10 0
+  52 000a BD46     		mov	sp, r7
+  53              	.LCFI2:
+  54              		.cfi_def_cfa_register 13
+  55              		@ sp needed
+  56 000c 5DF8047B 		ldr	r7, [sp], #4
+  57              	.LCFI3:
+  58              		.cfi_restore 7
+  59              		.cfi_def_cfa_offset 0
+  60 0010 7047     		bx	lr
+  61              	.L3:
+  62 0012 00BF     		.align	2
+  63              	.L2:
+  64 0014 00000000 		.word	isOSStarted
+  65              		.cfi_endproc
+  66              	.LFE135:
+  68              		.section	.text.NMI_Handler,"ax",%progbits
+  69              		.align	2
+  70              		.global	NMI_Handler
+  71              		.thumb
+  72              		.thumb_func
+  74              	NMI_Handler:
+  75              	.LFB136:
+  11:../src/stm32f4xx_it.c **** 
+  12:../src/stm32f4xx_it.c **** /**
+  13:../src/stm32f4xx_it.c ****   * @brief  This function handles NMI exception.
+  14:../src/stm32f4xx_it.c ****   * @param  None
+  15:../src/stm32f4xx_it.c ****   * @retval None
+  16:../src/stm32f4xx_it.c ****   */
+  17:../src/stm32f4xx_it.c **** void NMI_Handler(void)
+  18:../src/stm32f4xx_it.c **** {
+  76              		.loc 1 18 0
+  77              		.cfi_startproc
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 1, uses_anonymous_args = 0
+  80              		@ link register save eliminated.
+  81 0000 80B4     		push	{r7}
+  82              	.LCFI4:
+  83              		.cfi_def_cfa_offset 4
+  84              		.cfi_offset 7, -4
+  85 0002 00AF     		add	r7, sp, #0
+  86              	.LCFI5:
+  87              		.cfi_def_cfa_register 7
+  19:../src/stm32f4xx_it.c **** }
+  88              		.loc 1 19 0
+  89 0004 BD46     		mov	sp, r7
+  90              	.LCFI6:
+  91              		.cfi_def_cfa_register 13
+  92              		@ sp needed
+  93 0006 5DF8047B 		ldr	r7, [sp], #4
+  94              	.LCFI7:
+  95              		.cfi_restore 7
+  96              		.cfi_def_cfa_offset 0
+  97 000a 7047     		bx	lr
+  98              		.cfi_endproc
+  99              	.LFE136:
+ 101              		.section	.text.HardFault_Handler,"ax",%progbits
+ARM GAS  /var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s 			page 3
+
+
+ 102              		.align	2
+ 103              		.global	HardFault_Handler
+ 104              		.thumb
+ 105              		.thumb_func
+ 107              	HardFault_Handler:
+ 108              	.LFB137:
+  20:../src/stm32f4xx_it.c **** 
+  21:../src/stm32f4xx_it.c **** /**
+  22:../src/stm32f4xx_it.c ****   * @brief  This function handles Hard Fault exception.
+  23:../src/stm32f4xx_it.c ****   * @param  None
+  24:../src/stm32f4xx_it.c ****   * @retval None
+  25:../src/stm32f4xx_it.c ****   */
+  26:../src/stm32f4xx_it.c **** void HardFault_Handler(void)
+  27:../src/stm32f4xx_it.c **** {
+ 109              		.loc 1 27 0
+ 110              		.cfi_startproc
+ 111              		@ args = 0, pretend = 0, frame = 0
+ 112              		@ frame_needed = 1, uses_anonymous_args = 0
+ 113              		@ link register save eliminated.
+ 114 0000 80B4     		push	{r7}
+ 115              	.LCFI8:
+ 116              		.cfi_def_cfa_offset 4
+ 117              		.cfi_offset 7, -4
+ 118 0002 00AF     		add	r7, sp, #0
+ 119              	.LCFI9:
+ 120              		.cfi_def_cfa_register 7
+ 121              	.L6:
+  28:../src/stm32f4xx_it.c ****   /* Go to infinite loop when Hard Fault exception occurs */
+  29:../src/stm32f4xx_it.c ****   while (1)
+  30:../src/stm32f4xx_it.c ****   {
+  31:../src/stm32f4xx_it.c ****   }
+ 122              		.loc 1 31 0 discriminator 1
+ 123 0004 FEE7     		b	.L6
+ 124              		.cfi_endproc
+ 125              	.LFE137:
+ 127 0006 00BF     		.section	.text.MemManage_Handler,"ax",%progbits
+ 128              		.align	2
+ 129              		.global	MemManage_Handler
+ 130              		.thumb
+ 131              		.thumb_func
+ 133              	MemManage_Handler:
+ 134              	.LFB138:
+  32:../src/stm32f4xx_it.c **** }
+  33:../src/stm32f4xx_it.c **** 
+  34:../src/stm32f4xx_it.c **** /**
+  35:../src/stm32f4xx_it.c ****   * @brief  This function handles Memory Manage exception.
+  36:../src/stm32f4xx_it.c ****   * @param  None
+  37:../src/stm32f4xx_it.c ****   * @retval None
+  38:../src/stm32f4xx_it.c ****   */
+  39:../src/stm32f4xx_it.c **** void MemManage_Handler(void)
+  40:../src/stm32f4xx_it.c **** {
+ 135              		.loc 1 40 0
+ 136              		.cfi_startproc
+ 137              		@ args = 0, pretend = 0, frame = 0
+ 138              		@ frame_needed = 1, uses_anonymous_args = 0
+ 139              		@ link register save eliminated.
+ 140 0000 80B4     		push	{r7}
+ARM GAS  /var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s 			page 4
+
+
+ 141              	.LCFI10:
+ 142              		.cfi_def_cfa_offset 4
+ 143              		.cfi_offset 7, -4
+ 144 0002 00AF     		add	r7, sp, #0
+ 145              	.LCFI11:
+ 146              		.cfi_def_cfa_register 7
+ 147              	.L8:
+  41:../src/stm32f4xx_it.c ****   /* Go to infinite loop when Memory Manage exception occurs */
+  42:../src/stm32f4xx_it.c ****   while (1)
+  43:../src/stm32f4xx_it.c ****   {
+  44:../src/stm32f4xx_it.c ****   }
+ 148              		.loc 1 44 0 discriminator 1
+ 149 0004 FEE7     		b	.L8
+ 150              		.cfi_endproc
+ 151              	.LFE138:
+ 153 0006 00BF     		.section	.text.BusFault_Handler,"ax",%progbits
+ 154              		.align	2
+ 155              		.global	BusFault_Handler
+ 156              		.thumb
+ 157              		.thumb_func
+ 159              	BusFault_Handler:
+ 160              	.LFB139:
+  45:../src/stm32f4xx_it.c **** }
+  46:../src/stm32f4xx_it.c **** 
+  47:../src/stm32f4xx_it.c **** /**
+  48:../src/stm32f4xx_it.c ****   * @brief  This function handles Bus Fault exception.
+  49:../src/stm32f4xx_it.c ****   * @param  None
+  50:../src/stm32f4xx_it.c ****   * @retval None
+  51:../src/stm32f4xx_it.c ****   */
+  52:../src/stm32f4xx_it.c **** void BusFault_Handler(void)
+  53:../src/stm32f4xx_it.c **** {
+ 161              		.loc 1 53 0
+ 162              		.cfi_startproc
+ 163              		@ args = 0, pretend = 0, frame = 0
+ 164              		@ frame_needed = 1, uses_anonymous_args = 0
+ 165              		@ link register save eliminated.
+ 166 0000 80B4     		push	{r7}
+ 167              	.LCFI12:
+ 168              		.cfi_def_cfa_offset 4
+ 169              		.cfi_offset 7, -4
+ 170 0002 00AF     		add	r7, sp, #0
+ 171              	.LCFI13:
+ 172              		.cfi_def_cfa_register 7
+ 173              	.L10:
+  54:../src/stm32f4xx_it.c ****   /* Go to infinite loop when Bus Fault exception occurs */
+  55:../src/stm32f4xx_it.c ****   while (1)
+  56:../src/stm32f4xx_it.c ****   {
+  57:../src/stm32f4xx_it.c ****   }
+ 174              		.loc 1 57 0 discriminator 1
+ 175 0004 FEE7     		b	.L10
+ 176              		.cfi_endproc
+ 177              	.LFE139:
+ 179 0006 00BF     		.section	.text.UsageFault_Handler,"ax",%progbits
+ 180              		.align	2
+ 181              		.global	UsageFault_Handler
+ 182              		.thumb
+ 183              		.thumb_func
+ARM GAS  /var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s 			page 5
+
+
+ 185              	UsageFault_Handler:
+ 186              	.LFB140:
+  58:../src/stm32f4xx_it.c **** }
+  59:../src/stm32f4xx_it.c **** 
+  60:../src/stm32f4xx_it.c **** /**
+  61:../src/stm32f4xx_it.c ****   * @brief  This function handles Usage Fault exception.
+  62:../src/stm32f4xx_it.c ****   * @param  None
+  63:../src/stm32f4xx_it.c ****   * @retval None
+  64:../src/stm32f4xx_it.c ****   */
+  65:../src/stm32f4xx_it.c **** void UsageFault_Handler(void)
+  66:../src/stm32f4xx_it.c **** {
+ 187              		.loc 1 66 0
+ 188              		.cfi_startproc
+ 189              		@ args = 0, pretend = 0, frame = 0
+ 190              		@ frame_needed = 1, uses_anonymous_args = 0
+ 191              		@ link register save eliminated.
+ 192 0000 80B4     		push	{r7}
+ 193              	.LCFI14:
+ 194              		.cfi_def_cfa_offset 4
+ 195              		.cfi_offset 7, -4
+ 196 0002 00AF     		add	r7, sp, #0
+ 197              	.LCFI15:
+ 198              		.cfi_def_cfa_register 7
+ 199              	.L12:
+  67:../src/stm32f4xx_it.c ****   /* Go to infinite loop when Usage Fault exception occurs */
+  68:../src/stm32f4xx_it.c ****   while (1)
+  69:../src/stm32f4xx_it.c ****   {
+  70:../src/stm32f4xx_it.c ****   }
+ 200              		.loc 1 70 0 discriminator 1
+ 201 0004 FEE7     		b	.L12
+ 202              		.cfi_endproc
+ 203              	.LFE140:
+ 205 0006 00BF     		.section	.text.DebugMon_Handler,"ax",%progbits
+ 206              		.align	2
+ 207              		.global	DebugMon_Handler
+ 208              		.thumb
+ 209              		.thumb_func
+ 211              	DebugMon_Handler:
+ 212              	.LFB141:
+  71:../src/stm32f4xx_it.c **** }
+  72:../src/stm32f4xx_it.c **** 
+  73:../src/stm32f4xx_it.c **** /**
+  74:../src/stm32f4xx_it.c ****   * @brief  This function handles Debug Monitor exception.
+  75:../src/stm32f4xx_it.c ****   * @param  None
+  76:../src/stm32f4xx_it.c ****   * @retval None
+  77:../src/stm32f4xx_it.c ****   */
+  78:../src/stm32f4xx_it.c **** void DebugMon_Handler(void)
+  79:../src/stm32f4xx_it.c **** {
+ 213              		.loc 1 79 0
+ 214              		.cfi_startproc
+ 215              		@ args = 0, pretend = 0, frame = 0
+ 216              		@ frame_needed = 1, uses_anonymous_args = 0
+ 217              		@ link register save eliminated.
+ 218 0000 80B4     		push	{r7}
+ 219              	.LCFI16:
+ 220              		.cfi_def_cfa_offset 4
+ 221              		.cfi_offset 7, -4
+ARM GAS  /var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s 			page 6
+
+
+ 222 0002 00AF     		add	r7, sp, #0
+ 223              	.LCFI17:
+ 224              		.cfi_def_cfa_register 7
+  80:../src/stm32f4xx_it.c **** }
+ 225              		.loc 1 80 0
+ 226 0004 BD46     		mov	sp, r7
+ 227              	.LCFI18:
+ 228              		.cfi_def_cfa_register 13
+ 229              		@ sp needed
+ 230 0006 5DF8047B 		ldr	r7, [sp], #4
+ 231              	.LCFI19:
+ 232              		.cfi_restore 7
+ 233              		.cfi_def_cfa_offset 0
+ 234 000a 7047     		bx	lr
+ 235              		.cfi_endproc
+ 236              	.LFE141:
+ 238              		.section	.text.SysTick_Handler,"ax",%progbits
+ 239              		.align	2
+ 240              		.global	SysTick_Handler
+ 241              		.thumb
+ 242              		.thumb_func
+ 244              	SysTick_Handler:
+ 245              	.LFB142:
+  81:../src/stm32f4xx_it.c **** 
+  82:../src/stm32f4xx_it.c **** void SysTick_Handler(void)
+  83:../src/stm32f4xx_it.c **** {
+ 246              		.loc 1 83 0
+ 247              		.cfi_startproc
+ 248              		@ args = 0, pretend = 0, frame = 0
+ 249              		@ frame_needed = 1, uses_anonymous_args = 0
+ 250 0000 80B5     		push	{r7, lr}
+ 251              	.LCFI20:
+ 252              		.cfi_def_cfa_offset 8
+ 253              		.cfi_offset 7, -8
+ 254              		.cfi_offset 14, -4
+ 255 0002 00AF     		add	r7, sp, #0
+ 256              	.LCFI21:
+ 257              		.cfi_def_cfa_register 7
+  84:../src/stm32f4xx_it.c ****   HAL_IncTick();
+ 258              		.loc 1 84 0
+ 259 0004 FFF7FEFF 		bl	HAL_IncTick
+  85:../src/stm32f4xx_it.c ****   if (isOSStarted) {
+ 260              		.loc 1 85 0
+ 261 0008 034B     		ldr	r3, .L16
+ 262 000a 1B68     		ldr	r3, [r3]
+ 263 000c 002B     		cmp	r3, #0
+ 264 000e 01D0     		beq	.L14
+  86:../src/stm32f4xx_it.c **** 	  xPortSysTickHandler();
+ 265              		.loc 1 86 0
+ 266 0010 FFF7FEFF 		bl	OSSysTick_Handler
+ 267              	.L14:
+  87:../src/stm32f4xx_it.c ****   }
+  88:../src/stm32f4xx_it.c **** }
+ 268              		.loc 1 88 0
+ 269 0014 80BD     		pop	{r7, pc}
+ 270              	.L17:
+ 271 0016 00BF     		.align	2
+ARM GAS  /var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s 			page 7
+
+
+ 272              	.L16:
+ 273 0018 00000000 		.word	isOSStarted
+ 274              		.cfi_endproc
+ 275              	.LFE142:
+ 277              		.text
+ 278              	.Letext0:
+ 279              		.file 2 "/Users/adambujak/Workspace/whisper_system/.dependencies/gcc-arm-none-eabi-4_9-2015q3/arm-
+ 280              		.file 3 "/Users/adambujak/Workspace/whisper_system/.dependencies/gcc-arm-none-eabi-4_9-2015q3/arm-
+ 281              		.file 4 "../../../../dependencies/stm/STM32F4_Cube/Drivers/CMSIS/Include/core_cm4.h"
+ARM GAS  /var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f4xx_it.c
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:21     .bss.isOSStarted:0000000000000000 $d
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:24     .bss.isOSStarted:0000000000000000 isOSStarted
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:27     .text.OSStarted:0000000000000000 $t
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:32     .text.OSStarted:0000000000000000 OSStarted
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:64     .text.OSStarted:0000000000000014 $d
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:69     .text.NMI_Handler:0000000000000000 $t
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:74     .text.NMI_Handler:0000000000000000 NMI_Handler
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:102    .text.HardFault_Handler:0000000000000000 $t
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:107    .text.HardFault_Handler:0000000000000000 HardFault_Handler
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:128    .text.MemManage_Handler:0000000000000000 $t
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:133    .text.MemManage_Handler:0000000000000000 MemManage_Handler
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:154    .text.BusFault_Handler:0000000000000000 $t
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:159    .text.BusFault_Handler:0000000000000000 BusFault_Handler
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:180    .text.UsageFault_Handler:0000000000000000 $t
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:185    .text.UsageFault_Handler:0000000000000000 UsageFault_Handler
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:206    .text.DebugMon_Handler:0000000000000000 $t
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:211    .text.DebugMon_Handler:0000000000000000 DebugMon_Handler
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:239    .text.SysTick_Handler:0000000000000000 $t
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:244    .text.SysTick_Handler:0000000000000000 SysTick_Handler
+/var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s:273    .text.SysTick_Handler:0000000000000018 $d
+                     .debug_frame:0000000000000010 $d
+                           .group:0000000000000000 wm4.0.12d3039ce5a2552d46df25be77b64279
+                           .group:0000000000000000 wm4.stm32f4xx_hal_conf.h.2.af8b2ca6b03807d43d9ddf9698d1361c
+                           .group:0000000000000000 wm4.stm32f4xx.h.39.1b09cc4be5834e402f47d342f5416be4
+                           .group:0000000000000000 wm4.stm32f412zx.h.35.d9913ab15c3cc42510cd85c75dd3c4eb
+                           .group:0000000000000000 wm4.features.h.22.2e382148a0560adabf236cddd4e880f4
+                           .group:0000000000000000 wm4._default_types.h.15.933e8edd27a65e0b69af4a865eb623d2
+                           .group:0000000000000000 wm4._intsup.h.10.35a45952db64d30146faa63a55c20c1c
+                           .group:0000000000000000 wm4._stdint.h.10.f76354baea1c7088202064e6f3d4f5e3
+                           .group:0000000000000000 wm4.stdint.h.23.373a9d32a9e4c2e88fd347156532d281
+                           .group:0000000000000000 wm4.cmsis_version.h.32.4d5822004c01a829a975260e854b5f8e
+                           .group:0000000000000000 wm4.core_cm4.h.66.e4ff136c4a17abc46741866f64f8e729
+                           .group:0000000000000000 wm4.cmsis_gcc.h.26.f42444deefab66ffa141b9b9fddb57a3
+                           .group:0000000000000000 wm4.core_cm4.h.174.059a5e001a9e729091d1407208e93224
+                           .group:0000000000000000 wm4.mpu_armv7.h.32.27b4593cb2f8d3152ca5d97a9d72b321
+                           .group:0000000000000000 wm4.stm32f412zx.h.838.7f7dacbfe2e2c88ca5202f260290d6c1
+                           .group:0000000000000000 wm4.stm32f4xx.h.196.23c4e4a5d465a121178374b8f4182f7c
+                           .group:0000000000000000 wm4.stm32_hal_legacy.h.23.394d12941f5a0482dbe3c36ee9e57b2b
+                           .group:0000000000000000 wm4.stddef.h.39.c744ceb84abf2f8351653f0e2622da1c
+                           .group:0000000000000000 wm4.stm32f4xx_hal_def.h.58.2d2c85d5b9693a63e90566b806e8a752
+                           .group:0000000000000000 wm4.stm32f4xx_hal_rcc_ex.h.22.fe15f7aa872c0ff0051d1df0fdd88661
+                           .group:0000000000000000 wm4.stm32f4xx_hal_rcc.h.108.0c18a3cfc2dd91bdf92470b4bd0ea1b5
+                           .group:0000000000000000 wm4.stm32f4xx_hal_exti.h.22.b6735b42221f61fdbfd800fa51550a85
+                           .group:0000000000000000 wm4.stm32f4xx_hal_gpio.h.22.be2c6bcf9722096ea8f49a41bf6aa50c
+                           .group:0000000000000000 wm4.stm32f4xx_hal_gpio_ex.h.22.5fac61f4372beb17c6941adb263493e1
+                           .group:0000000000000000 wm4.stm32f4xx_hal_gpio.h.264.978ac12eab1d3b3400b35b8c427e2c33
+                           .group:0000000000000000 wm4.stm32f4xx_hal_dma.h.22.fffce20ac9119c50557659c75e75ab1c
+                           .group:0000000000000000 wm4.stm32f4xx_hal_dma.h.721.a1e57ffbc615f926e6509c5acc65e492
+                           .group:0000000000000000 wm4.stm32f4xx_hal_cortex.h.22.e6aa3b847b5388be63c32d1f9e696ef7
+                           .group:0000000000000000 wm4.stm32f4xx_hal_flash.h.22.31b301be2655c3eb8583e51c8231544a
+                           .group:0000000000000000 wm4.stm32f4xx_hal_flash_ex.h.22.5016bda819f6a480c96be63516c36ab2
+                           .group:0000000000000000 wm4.stm32f4xx_hal_flash.h.363.51efdf0f6c88f683efb89d7cc95cc1be
+                           .group:0000000000000000 wm4.stm32f4xx_ll_fsmc.h.22.ed2b494a9a7d206deda6c53e626a4601
+                           .group:0000000000000000 wm4.stm32f4xx_hal_i2c.h.22.7a518225417837eb3d0550cc95fa0a57
+                           .group:0000000000000000 wm4.stm32f4xx_hal_i2c_ex.h.22.a90c9435159b7eaef7dc679da6295e14
+ARM GAS  /var/folders/_8/_cw6l3nd335f_j6cn6z79m4m0000gn/T//ccX9B6Vt.s 			page 9
+
+
+                           .group:0000000000000000 wm4.stm32f4xx_hal_i2c.h.644.9d0aaa0659558fa97b5b5ac32630da6a
+                           .group:0000000000000000 wm4.stm32f4xx_hal_pwr.h.22.2c27d93ae187efe3a73816f03a329970
+                           .group:0000000000000000 wm4.stm32f4xx_hal_pwr_ex.h.22.a735ba4f49c5b2574a98d58f3b7ae925
+                           .group:0000000000000000 wm4.stm32f4xx_hal_pwr.h.337.60b43975c84527a23cb6994b23165a5e
+                           .group:0000000000000000 wm4.stm32f4xx_hal_spi.h.22.bc4a13b7a7ee3429db720a8d37eb1e5e
+                           .group:0000000000000000 wm4.stm32f4xx_hal_tim.h.22.9c16860ec2cc7f3d941608a8f521bc4a
+                           .group:0000000000000000 wm4.stm32f4xx_hal_tim_ex.h.22.2fde471485fd197eebc7c86251149c11
+                           .group:0000000000000000 wm4.stm32f4xx_hal_uart.h.22.1edfd0da9670bd23245390d2a3da576d
+                           .group:0000000000000000 wm4.stm32f4xx_hal.h.72.a5a58188aa461a0614f1e58e159c7840
+                           .group:0000000000000000 wm4.FreeRTOSConfig.h.2.efa69af35ff1ce1c2b556680ee99d891
+                           .group:0000000000000000 wm4.projdefs.h.28.d6a7c9061b707820f2fcf4c2ff5d9f24
+                           .group:0000000000000000 wm4.portmacro.h.30.0285ed3864ca8fd2e12d2b9aedd88dfd
+                           .group:0000000000000000 wm4.portable.h.63.e9cc508c3850f44ce542149380c67812
+                           .group:0000000000000000 wm4.mpu_wrappers.h.28.163fb40577cf8d1578015ea3f2ff4cdb
+                           .group:0000000000000000 wm4.FreeRTOS.h.67.b174ccccfb8001b827e8ddeee1ca37a2
+                           .group:0000000000000000 wm4.list.h.57.02ec67e07eacffe5ca7cfb7326896236
+                           .group:0000000000000000 wm4.task.h.47.2d3fe49a094b8ec1e3e6aac441e8db21
+                           .group:0000000000000000 wm4.queue.h.66.45d4a3cf5de24cde7e732f8dad25383c
+                           .group:0000000000000000 wm4.timers.h.29.025d268d6baf57298309e7b498ee1cc7
+                           .group:0000000000000000 wm4.semphr.h.38.96f44691bfa19eb833944d3a35b81e54
+                           .group:0000000000000000 wm4.newlib.h.8.2702bca278809460f0af6fba1d84eb68
+                           .group:0000000000000000 wm4.config.h.220.a09b0b0de3c25be3f39d71990e617bff
+                           .group:0000000000000000 wm4._ansi.h.23.9f8fcfa20193763fcf364fb91705c94b
+                           .group:0000000000000000 wm4.lock.h.2.9bc98482741e5e2a9450b12934a684ea
+                           .group:0000000000000000 wm4._types.h.54.d3d34a3b7f3cc230cd159baf022b4b08
+                           .group:0000000000000000 wm4.stddef.h.158.61317cdbfb4026324507d123a50b0fd6
+                           .group:0000000000000000 wm4.reent.h.17.8bd9e4098e0428508c282cad794fae43
+                           .group:0000000000000000 wm4.cdefs.h.47.55832cb26e4a21cedaa9b1b3b922c6b1
+                           .group:0000000000000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:0000000000000000 wm4.stddef.h.158.a7efb00f6cbc6f43213b50e183c9830c
+                           .group:0000000000000000 wm4.stdio.h.27.3fc80220048df77954e38daec3bb9670
+                           .group:0000000000000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:0000000000000000 wm4.types.h.24.b2be5f53932a9c9d07787288b29b6d75
+                           .group:0000000000000000 wm4.types.h.2.e9cec8c90ab35f77d9f499e06ae02400
+                           .group:0000000000000000 wm4.types.h.82.82b71f3f44c70e3a459d0f66642b05eb
+                           .group:0000000000000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:0000000000000000 wm4.stdio.h.68.a99a2db1e55915cfd1b035cc1e9fcff1
+                           .group:0000000000000000 wm4.wst_common.h.9.8860a77277a68c3cc83109e96e83c7fb
+                           .group:0000000000000000 wm4.com.h.15.68f97ab2f34c884c6815e65d0dd90bb3
+
+UNDEFINED SYMBOLS
+HAL_IncTick
+OSSysTick_Handler
