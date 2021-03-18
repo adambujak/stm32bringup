@@ -1,5 +1,5 @@
 #include "bsp.h"
-#include "com.h"
+#include "sample_application.h"
 #include "stm32f4xx_it.h"
 
 #include "logger.h"

@@ -1,7 +1,7 @@
 #ifndef I2C_H
 #define I2C_H
 
-#include "com.h"
+#include "sample_application.h"
 #include "bsp.h"
 
 void i2c_init(void);

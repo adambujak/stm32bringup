@@ -1,7 +1,7 @@
 #include "logger.h"
 
 #include "bsp.h"
-#include "com.h"
+#include "sample_application.h"
 
 #include <string.h>
 

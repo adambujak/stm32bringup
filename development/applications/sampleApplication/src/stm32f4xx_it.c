@@ -1,6 +1,7 @@
 #include "stm32f4xx_it.h"
 #include "stm32f4xx_hal.h"
-#include "com.h"
+
+#include "sample_application.h"
 
 static int isOSStarted = 0;
 
